@@ -1,0 +1,30 @@
+RapidIO operations are based on request and response transactions.
+
+     Packets are the basic communication unit between endpoint devices 
+in the system. Initiating device or master device A request transaction 
+is generated and the transaction is sent to the target device. Target device
+Generate a response transaction and return to the initiating device to 
+complete the operation. RapidIO The transaction is encapsulated in a package, 
+and the package contains to ensure that the transaction is reliably delivered to the target endpoint
+All required bit fields of the. Usually RapidIO endpoints are not directly connected to each other
+Together, but through the intervening exchange structure (fabric) connection. The noun "exchange
+"Structure" refers to a collection of single or multiple switching devices that provide system interconnection.
+
+     Control symbols are used to manage the transaction flow of the 
+RapdIO physical layer interconnection, and are also used for packet 
+confirmation.Recognition, flow control information and maintenance 
+functions. The figure below shows how to use RapidIO Transfer 
+transactions in the system.
+
+In the above figure, the initiator in the system (Initiator) starts an 
+operation by generating a request transaction (Request). The request 
+packet is transmitted to the fabric device (Fabric), which is usually 
+a switch. The fabric device sends a control symbol to confirm receipt 
+of the request packet, and then the switch fabric forwards the packet 
+to the target device (Target), which completes this time. The request 
+process of the operation. The target device (Target) completes the required 
+operation and generates a response transaction (Response). The response 
+packet carrying the transaction is transmitted back to the initiator through 
+the switching fabric (Fabric). The control symbol is used to confirm each hop 
+during transmission. Once the response packet reaches the Initiator and is 
+confirmed, it can be considered that the operation has been completed.
