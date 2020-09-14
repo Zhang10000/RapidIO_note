@@ -1,0 +1,5 @@
+编译 库 和 bundleserver
+查看是否生成目标插件    ../bundles
+启动 bundleserver
+cmd 
+tmppshd
