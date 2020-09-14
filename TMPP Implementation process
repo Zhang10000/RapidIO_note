@@ -3,3 +3,7 @@
 启动 bundleserver
 cmd 
 tmppshd
+ls
+start
+
+在 bundleserverd 中进入插件内部逻辑
